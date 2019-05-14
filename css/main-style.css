@@ -1,0 +1,499 @@
+/*************************************************************
+  01 -  imports & global style
+**************************************************************/
+@font-face{
+    font-family: 'OPENSANS';
+    src: url('../fonts/OPENSANS.TTF');
+}
+
+@font-face{
+    font-family: 'OPENSANS-BOLD';
+    src: url('../fonts/OPENSANS-BOLD.TTF');
+}
+
+@font-face{
+    font-family: 'OPENSANS-BOLDITALIC';
+    src: url('../fonts/OPENSANS-BOLDITALIC.TTF');
+}
+
+@font-face{
+    font-family: 'OPENSANS-EXTRABOLD';
+    src: url('../fonts/OPENSANS-EXTRABOLD.TTF');
+}
+
+@font-face{
+    font-family: 'OPENSANS-EXTRABOLDITALIC';
+    src: url('../fonts/OPENSANS-EXTRABOLDITALIC.TTF');
+}
+
+@font-face{
+    font-family: 'OPENSANS-ITALIC';
+    src: url('../fonts/OPENSANS-ITALIC.TTF');
+}
+
+@font-face{
+    font-family: 'OPENSANS-LIGHT';
+    src: url('../fonts/OPENSANS-LIGHT.TTF');
+}
+
+@font-face{
+    font-family: 'OPENSANS-LIGHTITALIC';
+    src: url('../fonts/OPENSANS-LIGHTITALIC.TTF');
+}
+
+@font-face{
+    font-family: 'OPENSANS-SEMIBOLD';
+    src: url('../fonts/OPENSANS-SEMIBOLD.TTF');
+}
+
+@font-face{
+    font-family: 'OPENSANS-SEMIBOLDITALIC';
+    src: url('../fonts/OPENSANS-SEMIBOLDITALIC.TTF');
+}
+
+:root {
+    --main-color: rgb(226, 64, 76);
+    --gray-color: #f5f5f5;
+}
+
+body {
+    font-family: 'OPENSANS';
+    overflow-x: hidden;
+    overflow-y: hidden
+}
+
+a,a:hover,a:active {
+    color: black;
+    text-decoration: none
+}
+
+.main-padding {padding: 2.5rem 0 1rem 0}
+
+.main-color{color: var(--main-color)}
+
+.badge {
+    margin: 15px 0;
+    color: var(--main-color)
+}
+
+/*************************************************************
+  02 - headder
+**************************************************************/
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+    background-color: #fff
+}
+
+/* upperbar */
+.upperbar {
+    border-bottom: 1px solid #ededed;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: .5s
+}
+
+.logo {margin-bottom: 10px}
+
+.user {
+    display: flex;
+    align-items: baseline
+}
+
+.user__icon {
+    background-color: var(--gray-color);
+    padding: 5px;
+    margin: 5px;
+    border-radius: 50%;
+    color: #989797
+}
+
+.user__name {
+    font-family: 'OPENSANS-BOLD';
+    color: #989797;
+    font-size: 14px
+}
+
+/* navbar */
+.main-navbar {box-shadow: 0 5px 5px 0 var(--gray-color)}
+
+.nav-link {
+    font-size: 13px;
+    font-weight: 900;
+    text-align: center;
+    text-transform: capitalize;
+    font-family: 'OPENSANS-BOLD';
+    padding: .5rem .5rem;
+    transition: .3s ease-in-out
+}
+
+.nav-link:hover {color: var(--main-color)}
+
+/*************************************************************
+  02 - banner
+**************************************************************/
+.banner {
+    background: url('../imgs/banner.jpg') no-repeat;
+    height: 250px;
+    background-size: cover;
+    margin-top: 50px
+}
+
+/*************************************************************
+  03 - contact
+**************************************************************/
+.section__header {
+    font-family: 'OPENSANS-BOLD';
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 17px;
+    margin-bottom: 10px
+}
+
+.contact__form,
+.contact__location {margin-bottom: 25px}
+
+.contact__form-header {
+    position: relative;
+    padding-bottom: 10px
+}
+
+.contact__form-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--main-color)
+}
+
+.label {
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: capitalize;
+    font-family: 'OPENSANS'
+}
+
+.form-control, .form-control:focus {
+    background-color: var(--gray-color);
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    font-weight: bold;
+    font-family: 'OPENSANS-SEMIBOLD'
+}
+
+.file-button {
+    font-size: 11px;
+    color: #a8a8a8;
+    display: grid;
+    grid-template-columns: 1fr .1fr;
+    align-items: center;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    color: #c9c9c9;
+    background-color: #e3e3e3;
+    padding: 2px 10px;
+    font-size: 12px;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.main-button {
+    border: none;
+    background-color: var(--main-color);
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'OPENSANS';
+    font-size: 13px;
+    padding: 7px 15px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.main-button::before, 
+.main-button::after {
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    width: 0%;
+    height: 50%;
+    transition: .3s;
+    z-index: -1;
+}
+
+.main-button::before {
+    top: 0;
+    left: 0;
+    right: auto
+}
+
+.main-button::after {
+    bottom: 0;
+    right: 0;
+    left: auto
+}
+
+.main-button:hover {color: var(--main-color)}
+
+.main-button:hover::before {
+    width: 100%;
+    right: 0;
+    left: auto
+}
+
+.main-button:hover::after {
+    width: 100%;
+    left: 0;
+    right: auto 
+}
+
+/* location information */
+.location-information li:not(:first-child) {
+    display: grid;
+    grid-template-columns: 25px 1fr;
+    align-items: baseline;
+    margin-bottom: 15px
+}
+
+.location-information li span {
+    font-size: 13px;
+    font-family: 'OPENSANS-SEMIBOLD'
+}
+
+/*************************************************************
+  04 - Footer
+**************************************************************/
+.footer {
+    background-image:linear-gradient(
+        to bottom,
+         #f7f7f7,
+         #f8f8f8,
+         #f9f9f9,
+         #fafafa,
+         #fbfbfb,
+         #fcfcfc,
+         #fdfdfd
+         );
+}
+
+.sub-section-header {
+    font-size: 15px;
+    font-family: 'OPENSANS-BOLD';
+    font-weight: 500;
+    margin-bottom: 20px
+}
+
+.sections {margin-bottom: 30px;}
+
+.sections-list {
+    position: relative;
+    padding-left: 15px;
+    font-family: 'OPENSANS-SEMIBOLD';
+    font-size: 13px;
+    margin-bottom: 30px
+}
+
+.sections-list::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 4px;
+    background-color: #e6e6e6;
+    left: 0;
+    top: 0
+}
+
+.sections-list::after {
+    content: '';
+    position: absolute;
+    height: 20%;
+    width: 4px;
+    background-color: #bfbfbf;
+    left: 0;
+    top: 0
+}
+
+  .sections-list li {
+      padding: 5px 0;
+      text-transform: capitalize
+  }
+
+  .sub-link {
+    font-size: 13px;
+    font-weight: 900;
+    text-transform: capitalize;
+    font-family: 'OPENSANS-BOLD';
+    padding: .5rem .5rem;
+    transition: .3s ease-in-out
+}
+
+.subscribe-box > :not(:first-child) {
+    font-size: 13px;
+    font-family: 'OPENSANS-SEMIBOLD';
+    padding-bottom: 15px
+}
+
+.subscribe-box p {
+    margin: 0
+}
+
+.subscribe-box .form-group {
+    display: flex
+}
+
+.subscribe-box  input::placeholder {
+    font-family: 'OPENSANS-ITALIC';
+    font-weight: normal;
+    font-size: 13px
+}
+
+.social-icons {
+    display: grid;
+    grid-template-columns: repeat(3, .2fr);
+    align-items: center
+}
+
+.fa-facebook-f {
+    background-color: #2d4485;
+    color: #FFF;
+    padding: 10px 13px;
+    border-radius: 4px;
+    width: 35px
+}
+
+.fa-twitter {
+    background-color: #52cbff;
+    color: #FFF;
+    padding: 10px 13px;
+    border-radius: 4px;
+    width: 35px
+}
+.fa-linkedin-in {
+    padding: 10px 13px;
+    border-radius: 4px;
+    width: 35px;
+    background-color: #0077b5;
+    color: #FFF
+}
+
+/*************************************************************
+  05 - Copyright
+**************************************************************/
+.copyright p{
+    font-size: 14px;
+    margin: 0;
+    padding: 10px 0;
+    font-family: 'OPENSANS';
+    margin-bottom: 20px
+}
+
+.company {
+    color: #3c4976;
+    text-transform: uppercase;
+    font-family: 'OPENSANS-BOLD';
+    
+}
+
+.payment-methods {
+    display: flex;
+    justify-content: space-around
+}
+
+.payment-methods li {margin-right: 30px}
+
+.payment-methods li img {
+    width: 50px;
+    max-width: 150%;
+    filter: grayscale();
+    transition: .5s
+}
+
+.payment-methods li img:hover {filter: none}
+/*************************************************************
+   6 - loading Screen
+**************************************************************/
+.loading-over {
+    background: #111;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.loading-over .lod {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+  
+.loading-over .lod div {
+    position: absolute;
+    border: 4px solid var(--main-color);
+    opacity: 1;
+    border-radius: 50%;
+    -webkit-animation: lod 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    -moz-lanimation: lod 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    -o-animation: lod 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    -ms-animation: lod 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    animation: lod 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+  
+.loading-over .lod div:nth-child(2) {
+    -webkit-animation-delay: -0.5s;
+    -moz-animation-delay: -0.5s;
+    -o-animation-delay: -0.5s;
+    -ms-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+}
+  
+@keyframes lod {
+0% {
+    top: 28px;
+    left: 28px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+}
+100% {
+    top: -1px;
+    left: -1px;
+    width: 58px;
+    height: 58px;
+    opacity: 0;
+}
+}
+
+
+
+
+
+
+
+
+
+
