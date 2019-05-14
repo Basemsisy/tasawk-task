@@ -397,7 +397,7 @@ a,a:hover,a:active {
 /*************************************************************
   05 - Copyright
 **************************************************************/
-.copyright p{
+.copyright p {
     font-size: 14px;
     margin: 0;
     padding: 10px 0;
@@ -409,7 +409,6 @@ a,a:hover,a:active {
     color: #3c4976;
     text-transform: uppercase;
     font-family: 'OPENSANS-BOLD';
-    
 }
 
 .payment-methods {
